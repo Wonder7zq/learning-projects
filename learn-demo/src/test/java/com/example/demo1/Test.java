@@ -65,8 +65,9 @@ public class Test {
     }
 
 
-    /** 
-     *lamda遍历list操作
+    /**
+     * lamda遍历list操作
+     *
      * @author Wonder7zq
      * @date 2022/11/7 14:15
      */
@@ -90,47 +91,47 @@ public class Test {
 
         System.out.println(list);
     }
-    
+
     /**
-     *BigDecimal方法测试
+     * BigDecimal方法测试
+     *
+     * @return String
      * @author Wonder7zq
      * @date 2022/11/7 14:06
-     * @return String
      */
-    public static String bigDecimalEdit(){
+    public static String bigDecimalEdit() {
         BigDecimal a = new BigDecimal(120);
         BigDecimal b = new BigDecimal(0);
 //        BigDecimal c = a.divide(b,4, BigDecimal.ROUND_HALF_UP).multiply(new BigDecimal(100));
 
-        Boolean d = b.compareTo(BigDecimal.ZERO) > 0 ;
+        Boolean d = b.compareTo(BigDecimal.ZERO) > 0;
         System.out.println(d);
         return d.toString();
     }
-    
-    /** 
-     * 
+
+    /**
      * @author Wonder7zq
      * @date 2022/11/10 16:09
      */
-    
-    private static void collectionEdit(){
+
+    private static void collectionEdit() {
         List<LoanRepaymentSchedule> l1 = new ArrayList<>();
 
-         for(int i=0;i<5;i++){
-             LoanRepaymentSchedule loanRpmtScheList = new LoanRepaymentSchedule();
-            loanRpmtScheList.setLoan_no("0000100"+i);
+        for (int i = 0; i < 5; i++) {
+            LoanRepaymentSchedule loanRpmtScheList = new LoanRepaymentSchedule();
+            loanRpmtScheList.setLoan_no("0000100" + i);
             loanRpmtScheList.setSerial_no(String.valueOf(i));
             loanRpmtScheList.setInstallment(new BigDecimal("10010"));
-            loanRpmtScheList.setPeriod_interest(new BigDecimal(50).add(new BigDecimal(10).multiply(BigDecimal.valueOf(5-i))));
+            loanRpmtScheList.setPeriod_interest(new BigDecimal(50).add(new BigDecimal(10).multiply(BigDecimal.valueOf(5 - i))));
             l1.add(loanRpmtScheList);
         }
 
         // 累加
-        BigDecimal totalInstAmt = l1.stream().map(LoanRepaymentSchedule::getInstallment).reduce(BigDecimal.ZERO,BigDecimal::add);
+        BigDecimal totalInstAmt = l1.stream().map(LoanRepaymentSchedule::getInstallment).reduce(BigDecimal.ZERO, BigDecimal::add);
 
-        l1.forEach(l ->{
-            l.setRate(l.getPeriod_interest().divide(l.getInstallment(),10,BigDecimal.ROUND_HALF_UP));
-        } );
+        l1.forEach(l -> {
+            l.setRate(l.getPeriod_interest().divide(l.getInstallment(), 10, BigDecimal.ROUND_HALF_UP));
+        });
 
         System.out.println(l1);
     }
