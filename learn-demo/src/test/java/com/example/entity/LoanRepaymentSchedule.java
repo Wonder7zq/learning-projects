@@ -11,7 +11,7 @@ public class LoanRepaymentSchedule {
     String serial_no;
     BigDecimal installment;
     BigDecimal period_interest;
-    BigDecimal rate;
+    BigDecimal rate;//利率
 
     public BigDecimal getRate() {
         return rate;
