@@ -1,0 +1,26 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+# Editor-based HTTP Client requests
+/httpRequests/
+# Datasource local storage ignored files
+/dataSources/
+/dataSources.local.xml
+
+target
+logs
+.idea
+.settings
+bin
+.DS_Store
+test-output
+./**/.classpath
+./**/.project
+ct-batch/.classpath
+ct-serv/.classpath
+ct-tran/.classpath
+.classpath
+.project
+*.iml
+./**/*.iml
+.vscode
